@@ -12,6 +12,8 @@ git clone --recurse-submodules https://github.com/Rappsilber-Laboratory/xiView_c
 
 ## 3. Initialise the database by running the schema.sql script from this project
 
+you will need to search and replace on the schrema.sql to swap 'username' for your PostgreSQL user name
+
 ## 4. Configure the python environment for the file parser
 
 Follow the instructions at [https://github.com/Rappsilber-Laboratory/xiSPEC_ms_parser](https://github.com/Rappsilber-Laboratory/xiSPEC_ms_parser) but you don't need to install sqlite; instead you need to edit the file xiSPEC_ms_parser/credentials.py to point to your postgress database.

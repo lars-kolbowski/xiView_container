@@ -30,7 +30,7 @@ COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
 
 
 --
--- Name: make_uid(); Type: FUNCTION; Schema: public; Owner: col
+-- Name: make_uid(); Type: FUNCTION; Schema: public; Owner: username
 --
 
 CREATE FUNCTION public.make_uid() RETURNS text
@@ -46,14 +46,14 @@ END;
 $$;
 
 
-ALTER FUNCTION public.make_uid() OWNER TO col;
+ALTER FUNCTION public.make_uid() OWNER TO username;
 
 SET default_tablespace = '';
 
 SET default_with_oids = false;
 
 --
--- Name: db_sequences; Type: TABLE; Schema: public; Owner: col
+-- Name: db_sequences; Type: TABLE; Schema: public; Owner: username
 --
 
 CREATE TABLE public.db_sequences (
@@ -67,10 +67,10 @@ CREATE TABLE public.db_sequences (
 );
 
 
-ALTER TABLE public.db_sequences OWNER TO col;
+ALTER TABLE public.db_sequences OWNER TO username;
 
 --
--- Name: modifications; Type: TABLE; Schema: public; Owner: col
+-- Name: modifications; Type: TABLE; Schema: public; Owner: username
 --
 
 CREATE TABLE public.modifications (
@@ -83,10 +83,10 @@ CREATE TABLE public.modifications (
 );
 
 
-ALTER TABLE public.modifications OWNER TO col;
+ALTER TABLE public.modifications OWNER TO username;
 
 --
--- Name: peptide_evidences; Type: TABLE; Schema: public; Owner: col
+-- Name: peptide_evidences; Type: TABLE; Schema: public; Owner: username
 --
 
 CREATE TABLE public.peptide_evidences (
@@ -99,10 +99,10 @@ CREATE TABLE public.peptide_evidences (
 );
 
 
-ALTER TABLE public.peptide_evidences OWNER TO col;
+ALTER TABLE public.peptide_evidences OWNER TO username;
 
 --
--- Name: peptides; Type: TABLE; Schema: public; Owner: col
+-- Name: peptides; Type: TABLE; Schema: public; Owner: username
 --
 
 CREATE TABLE public.peptides (
@@ -115,10 +115,10 @@ CREATE TABLE public.peptides (
 );
 
 
-ALTER TABLE public.peptides OWNER TO col;
+ALTER TABLE public.peptides OWNER TO username;
 
 --
--- Name: protocols; Type: TABLE; Schema: public; Owner: col
+-- Name: protocols; Type: TABLE; Schema: public; Owner: username
 --
 
 CREATE TABLE public.protocols (
@@ -129,10 +129,10 @@ CREATE TABLE public.protocols (
 );
 
 
-ALTER TABLE public.protocols OWNER TO col;
+ALTER TABLE public.protocols OWNER TO username;
 
 --
--- Name: spectra; Type: TABLE; Schema: public; Owner: col
+-- Name: spectra; Type: TABLE; Schema: public; Owner: username
 --
 
 CREATE TABLE public.spectra (
@@ -146,10 +146,10 @@ CREATE TABLE public.spectra (
 );
 
 
-ALTER TABLE public.spectra OWNER TO col;
+ALTER TABLE public.spectra OWNER TO username;
 
 --
--- Name: spectrum_identifications; Type: TABLE; Schema: public; Owner: col
+-- Name: spectrum_identifications; Type: TABLE; Schema: public; Owner: username
 --
 
 CREATE TABLE public.spectrum_identifications (
@@ -168,10 +168,10 @@ CREATE TABLE public.spectrum_identifications (
 );
 
 
-ALTER TABLE public.spectrum_identifications OWNER TO col;
+ALTER TABLE public.spectrum_identifications OWNER TO username;
 
 --
--- Name: uploads; Type: TABLE; Schema: public; Owner: col
+-- Name: uploads; Type: TABLE; Schema: public; Owner: username
 --
 
 CREATE TABLE public.uploads (
@@ -198,10 +198,10 @@ CREATE TABLE public.uploads (
 );
 
 
-ALTER TABLE public.uploads OWNER TO col;
+ALTER TABLE public.uploads OWNER TO username;
 
 --
--- Name: uploads_id_seq; Type: SEQUENCE; Schema: public; Owner: col
+-- Name: uploads_id_seq; Type: SEQUENCE; Schema: public; Owner: username
 --
 
 CREATE SEQUENCE public.uploads_id_seq
@@ -212,17 +212,17 @@ CREATE SEQUENCE public.uploads_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.uploads_id_seq OWNER TO col;
+ALTER TABLE public.uploads_id_seq OWNER TO username;
 
 --
--- Name: uploads_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: col
+-- Name: uploads_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: username
 --
 
 ALTER SEQUENCE public.uploads_id_seq OWNED BY public.uploads.id;
 
 
 --
--- Name: user_in_group; Type: TABLE; Schema: public; Owner: col
+-- Name: user_in_group; Type: TABLE; Schema: public; Owner: username
 --
 
 CREATE TABLE public.user_in_group (
@@ -231,10 +231,10 @@ CREATE TABLE public.user_in_group (
 );
 
 
-ALTER TABLE public.user_in_group OWNER TO col;
+ALTER TABLE public.user_in_group OWNER TO username;
 
 --
--- Name: users; Type: TABLE; Schema: public; Owner: col
+-- Name: users; Type: TABLE; Schema: public; Owner: username
 --
 
 CREATE TABLE public.users (
@@ -252,10 +252,10 @@ CREATE TABLE public.users (
 );
 
 
-ALTER TABLE public.users OWNER TO col;
+ALTER TABLE public.users OWNER TO username;
 
 --
--- Name: users_id_seq; Type: SEQUENCE; Schema: public; Owner: col
+-- Name: users_id_seq; Type: SEQUENCE; Schema: public; Owner: username
 --
 
 CREATE SEQUENCE public.users_id_seq
@@ -266,31 +266,31 @@ CREATE SEQUENCE public.users_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.users_id_seq OWNER TO col;
+ALTER TABLE public.users_id_seq OWNER TO username;
 
 --
--- Name: users_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: col
+-- Name: users_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: username
 --
 
 ALTER SEQUENCE public.users_id_seq OWNED BY public.users.id;
 
 
 --
--- Name: uploads id; Type: DEFAULT; Schema: public; Owner: col
+-- Name: uploads id; Type: DEFAULT; Schema: public; Owner: username
 --
 
 ALTER TABLE ONLY public.uploads ALTER COLUMN id SET DEFAULT nextval('public.uploads_id_seq'::regclass);
 
 
 --
--- Name: users id; Type: DEFAULT; Schema: public; Owner: col
+-- Name: users id; Type: DEFAULT; Schema: public; Owner: username
 --
 
 ALTER TABLE ONLY public.users ALTER COLUMN id SET DEFAULT nextval('public.users_id_seq'::regclass);
 
 
 --
--- Name: protocols protocols_pkey; Type: CONSTRAINT; Schema: public; Owner: col
+-- Name: protocols protocols_pkey; Type: CONSTRAINT; Schema: public; Owner: username
 --
 
 ALTER TABLE ONLY public.protocols
@@ -298,7 +298,7 @@ ALTER TABLE ONLY public.protocols
 
 
 --
--- Name: uploads uploads_pkey; Type: CONSTRAINT; Schema: public; Owner: col
+-- Name: uploads uploads_pkey; Type: CONSTRAINT; Schema: public; Owner: username
 --
 
 ALTER TABLE ONLY public.uploads
