@@ -10,7 +10,7 @@ git clone --recurse-submodules https://github.com/Rappsilber-Laboratory/xiView_c
 
 ## 2. Install Apache, PostgreSQL, PHP postgres modules
 
-## 3. Initialise the database by runnign the schema.sql script from this project
+## 3. Initialise the database by running the schema.sql script from this project
 
 ## 4. Configure the python environment for the file parser
 
@@ -23,7 +23,7 @@ Follow the instructions at  https://github.com/Rappsilber-Laboratory/xiAnnotator
 ## 6. Edit yet more config files (todo - tidy this up)
 
 Edit ./connectionString.php so it points to your PostgreSQL database
-Edit ./xiSPEC_config so it points to your xiAnnotation service
+Edit ./xiSPEC_config so it points to your xiAnnotator service
 
 .gitignore will ignore your changes to these files
 
