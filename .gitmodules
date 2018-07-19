@@ -2,7 +2,7 @@
 	path = xiNET_website
 	url = https://github.com/colin-combe/xiNET_website.git
 [submodule "CLMS-UI"]
-	path = CLMS-UI
+	path = xi3
 	url = https://github.com/colin-combe/CLMS-UI.git
 [submodule "CLMS-model"]
 	path = CLMS-model
@@ -16,3 +16,6 @@
 [submodule "crosslink-viewer"]
 	path = crosslink-viewer
 	url = https://github.com/colin-combe/crosslink-viewer.git
+[submodule "history"]
+	path = history
+	url = https://github.com/colin-combe/history
